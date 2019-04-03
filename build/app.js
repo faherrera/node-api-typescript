@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const helmet_1 = __importDefault(require("helmet"));
+require("./database"); //Import Database.
+process.env.NODE_ENV && require('dotenv').config();
 class App {
     constructor() {
         this.app = express_1.default();

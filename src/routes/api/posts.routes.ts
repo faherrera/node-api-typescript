@@ -1,9 +1,11 @@
 import { Router } from "express";
+import PostController from "./../../controllers/posts.api.controller";
 
 const router : Router = Router();
+const _postController = new PostController();
 
-router.get('/', (req,res) => res.send('Index Post ---'));
-router.get('/:id', (req,res) => res.send('Get el post'));
+router.get('/', _postController.getAll);
+router.get('/:id', _postController.get);
 
 export default router;
 
